@@ -6,13 +6,14 @@
     \item Entwicklungsbranches sind (kurze) featurebranches
     \item Merge in main erfolgt immer ueber pull-request
     \item In der Regel sollte ein Code-review stattfinden
+    \item Featurebranchname: $<JIRA-TicketNo>\_<sprechende\_Bezeichnung>$
     \end{itemize}
     \begin{block}{Ziel}
       Im main-branch sollte immer lauffaehiger, getesteter und deployfahiger Code liegen
       \end{block}
   \end{frame}
 
-  \begin{frame}
+\begin{frame}
     \frametitle{git}
     \begin{itemize}
     \item squash commits bei merge
@@ -21,6 +22,32 @@
     \item rebase $\rightarrow$ Gehe in das Gefängnis. Begib Dich direkt dorthin. Gehe nicht über Los. Ziehe nicht EUR 1000 ein 
     \end{itemize}
     \begin{block}{Ziel}
-      Im main-branch sollte immer lauffaehiger, getesteter und deployfahiger Code liegen
+      Uebersichtliche und nachvollziehbare Entwicklungszyklen sowie git als single point of truth
       \end{block}
-    \end{frame}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CI}
+    \begin{itemize}
+      \item Verwendung der Basis-CI
+      \item Kein voodoo in der CI (dwyce - do what your customer expect)
+      \item Feature-branch pushes sollen KEINE Artefakte o.ae. erzeugen
+      \item Ein push auf main muss ein Artefakt erzeugen (release)
+    \end{itemize}
+    \begin{block}{Ziel}
+        Die CI stellt sicher dass getesteter und lauffaehiger Code im repositry liegt. Zudem stellt Sie sicher dass Artefakte luaffaehig und versioniert abgelegt werden
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CI 2}
+    \begin{itemize}
+      \item Artifakte sollten nur als release abgelegt werden
+      \item CI fuehrt tests durch z.B. spotless:check, pmd:check, sonarcube, jacoco \dots
+      \item Builds sollen reproduzierbar sein
+    \end{itemize}
+    \begin{block}{Ziel}
+        Einige Metriken der CI sollen auswertbar sein und Codeveraenderungen aussagekraeftig anzeigen koennen.
+    \end{block}
+\end{frame}
+

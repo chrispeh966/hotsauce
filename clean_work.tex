@@ -16,7 +16,7 @@
 % Hyperref stopped early 
 %
 \usetheme{Frankfurt}
-\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+ \setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}
 
 
@@ -53,12 +53,12 @@
 \date{\today} 
 
 % zusaetzlich ist das usepackage{beamerthemeshadow} eingebunden 
-\usepackage{beamerthemeshadow}
+% \usepackage{beamerthemeshadow}
 
 %  \beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
 %  sorgt dafuer das die Elemente die erst noch (zukuenftig) kommen 
 %  nur schwach angedeutet erscheinen 
-\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+%\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
 % klappt auch bei Tabellen, wenn teTeX verwendet wird\ldots
 \begin{document}
 
@@ -74,9 +74,10 @@
 
 
 \input{allgemeines.tex}
-\input{modulstruktur.tex}
 \input{codestyle.tex}
+%\input{modulstruktur.tex}
 \input{workflow.tex}
+\input{repositories.tex}
 
 
 

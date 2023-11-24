@@ -1,0 +1,23 @@
+codestzle
+    google code formatter
+        ja ueber git-hooks bei commit und push
+        ywingend bei push kein push moeglich in den main branch ohne gcs
+       zusaetzlich noch spotless fuer eine manuelle ueberpruefung oder evtl erweiterung osmium
+       is has done  -- beispiele
+       funktionen -- beispiele
+       clean code -- am besten die initietive hier velrinken byw die wichtigsten paradigmen auffuehren
+       siganturen -- beispiele
+       sparsam mit var -- beispiele
+       zusaetlich noch consumer einfuehren
+       lombok -- nochmal drueber nachdenken und evaluieren
+       
+
+
+Workflow>
+    Bild mit Workflow einbauen
+    Copiloten
+    Mainteiner und Code REviews
+    //>Das hier veraendert alles mit dem Workflow - 
+    Ausnahmen bestaetigen die Regel
+    --Pragmatische Vorgehensweise - kein Dogma
+

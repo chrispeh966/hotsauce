@@ -1,0 +1,23 @@
+\section{Modulstruktur}
+\begin{frame}
+    \frametitle{Nomenklatur}
+    \begin{itemize}
+    \item artifactId == Name des Moduls
+    \item groupdid == de.Firmenname.bereichsname.projekt
+      \item package name == groupdid.artifactid:Versionsnummer
+    \end{itemize}
+    \begin{block}{Ziel}
+      Einheitliche Namensstrukturen, 
+      \end{block}
+  \end{frame}
+  \begin{frame}
+    \frametitle{Generelle Punkte}
+    \begin{itemize}
+    \item Multimodul vor Multiprojekt
+    \item parent pom mit wählbaren plugins
+    \item Querabhängigkeiten nie über snapshots
+    \end{itemize}
+    \begin{block}{Ziel}
+      Keine Works on my machine Projekte - Einheitliche Strukturen. Einheitliche Arbeitsumgebung (TODO besseres Wortwahl)
+      \end{block}
+  \end{frame}

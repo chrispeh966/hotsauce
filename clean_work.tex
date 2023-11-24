@@ -16,7 +16,6 @@
 % Hyperref stopped early 
 %
 \usetheme{Frankfurt}
-\usefonttheme[onlylarge]{structurebold}
 \setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}
 
@@ -75,70 +74,12 @@
 \end{frame} 
 
 
-\section{Allgemeine Punkte} 
-\begin{frame}
-\frametitle{Code} 
-\begin{itemize}
-\item veröffentlichbarer Code
-\item lesbarer Code
-\item wartbarer Code
-  \item Trennung von Technik und Fachlichkeit
-\end{itemize}
-\begin{block}{Ziel}
-  Grundsätzlich soll Code erzeugt werden der auf github veröffnetlicht werden kann (nicht muss)
-  \end{block}
-\end{frame}
-\begin{frame}
-\frametitle{Sprache} 
-\begin{itemize}
-\item Entwickliung in Englisch
-\item Kommentare in Englisch
-\item Dokumentation ausserhalb in deutsch, englisch oder mandarin
-\end{itemize}
-\begin{block}{Ziel}
-  Form follows function - Pragmatische Auswahl der Sprache nach Bedarf, Anwendung und
-  \end{block}
-\end{frame}
-\section{Modulstruktur}
-\begin{frame}
-  \frametitle{Nomenklatur}
-  \begin{itemize}
-  \item artifactId == Name des Moduls
-  \item groupdid == de.Firmenname.bereichsname.projekt
-    \item package name == groupdid.artifactid:Versionsnummer
-  \end{itemize}
-  \begin{block}{Ziel}
-    Einheitliche Namensstrukturen, 
-    \end{block}
-\end{frame}
-\begin{frame}
-  \frametitle{Generelle Punkte}
-  \begin{itemize}
-  \item Multimodul vor Multiprojekt
-  \item parent pom mit wählbaren plugins
-  \item Querabhängigkeiten nie über snapshots
-  \end{itemize}
-  \begin{block}{Ziel}
-    Keine Works on my machine Projekte - Einheitliche Strukturen. Einheitliche Arbeitsumgebung (TODO besseres Wortwahl)
-    \end{block}
-\end{frame}
-\section{Codestyle}
-\begin{frame}
-  \frametitle{Formatter}
-  \begin{itemize}
-  \item Kein Eigenlösungen
-  \item google codestyle als Basis
-  \item ausschliesslich google formatter verwenden
-  \end{itemize}
-  \begin{block}{Prämisse}
-    Jeder kann machen was er will .... Der Main branch muss konform zum google code style sein
-    \end{block}
-\end{frame}
+\input{allgemeines.tex}
+\input{modulstruktur.tex}
+\input{codestyle.tex}
 
 
 
-\begin{frame} 
-Denn ohne Titel fehlt ihnen was
-\end{frame}
+
 
 \end{document}

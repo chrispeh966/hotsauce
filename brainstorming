@@ -1,4 +1,4 @@
-codestzle
+codestyle
     google code formatter
         ja ueber git-hooks bei commit und push
         ywingend bei push kein push moeglich in den main branch ohne gcs
@@ -10,7 +10,7 @@ codestzle
        sparsam mit var -- beispiele
        zusaetlich noch consumer einfuehren
        lombok -- nochmal drueber nachdenken und evaluieren
-       
+
 
 
 Workflow>
@@ -20,4 +20,20 @@ Workflow>
     //>Das hier veraendert alles mit dem Workflow - 
     Ausnahmen bestaetigen die Regel
     --Pragmatische Vorgehensweise - kein Dogma
+
+    Basis CI --> Open document Wuensche was soll noch rein
+    SEmantic versioning --> 3 Stellen
+
+    --> jar auch in nexus --> git kann aufgeraumt werden
+
+Dokumentation evtl ueber git pages oder confluence import
+
+Rollenabdeckung
+    Owner diskussion --> Aktuell zuviele Owner
+
+Credentials
+    Plugins zum uebrpruefen z.B. prehooks
+
+
+
 

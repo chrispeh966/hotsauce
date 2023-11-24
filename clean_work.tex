@@ -1,0 +1,124 @@
+% Dieser Text ist urheberrechtlich gesch\"utzt
+% Er stellt einen Auszug eines von mir erstellten Referates da
+% und darf nicht gewerblich genutzt werden
+% die private bzw. Studiums bezogen Nutzung ist frei
+% April 2011
+% Autor: Sascha Frank 
+% Universit\"at Freiburg 
+% www.informatik.uni-freiburg.de/~frank/
+% frank < was da sonst immer steht > tf.uni-freiburg.de
+
+
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+% Die Hyperref Option hyperref={pdfpagelabels=false} verhindert die Warnung:
+% Package hyperref Warning: Option `pdfpagelabels' is turned off
+% (hyperref)                because \thepage is undefined. 
+% Hyperref stopped early 
+%
+
+\usepackage{lmodern}
+% Das Paket lmodern erspart die folgenden Warnungen:
+% LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
+% (Font)              size <5> substituted on input line 22.
+% LaTeX Font Warning: Size substitutions with differences
+% (Font)              up to 1.0pt have occurred.
+%
+
+% Wenn \titel{\ldots} \author{\ldots} erst nach \begin{document} kommen,
+% kommt folgende Warnung:
+% Package hyperref Warning: Option `pdfauthor' has already been used,
+% (hyperref) ... 
+% Daher steht es hier vor \begin{document}
+
+\title{Entwicklungsguidelines}   
+\author{nope} 
+\date{\today} 
+
+% zusaetzlich ist das usepackage{beamerthemeshadow} eingebunden 
+\usepackage{beamerthemeshadow}
+
+%  \beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+%  sorgt dafuer das die Elemente die erst noch (zukuenftig) kommen 
+%  nur schwach angedeutet erscheinen 
+\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+% klappt auch bei Tabellen, wenn teTeX verwendet wird\ldots
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame} 
+
+\begin{frame}
+\frametitle{Inhaltsverzeichnis}
+\tableofcontents
+\end{frame} 
+
+
+\section{Allgemeine Punkte} 
+\begin{frame}
+\frametitle{Code} 
+\begin{itemize}
+\item veröffentlichbarer Code
+\item lesbarer Code
+\item wartbarer Code
+  \item Trennung von Technik und Fachlichkeit
+\end{itemize}
+\begin{block}{Ziel}
+  Grundsätzlich soll Code erzeugt werden der auf github veröffnetlicht werden kann (nicht muss)
+  \end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Sprache} 
+\begin{itemize}
+\item Entwickliung in Englisch
+\item Kommentare in Englisch
+\item Dokumentation ausserhalb in deutsch, englisch oder mandarin
+\end{itemize}
+\begin{block}{Ziel}
+  Form follows function - Pragmatische Auswahl der Sprache nach Bedarf, Anwendung und
+  \end{block}
+\end{frame}
+\section{Modulstruktur}
+\begin{frame}
+  \frametitle{Nomenklatur}
+  \begin{itemize}
+  \item artifactId == Name des Moduls
+  \item groupdid == de.Firmenname.bereichsname.projekt
+    \item package name == groupdid.artifactid:Versionsnummer
+  \end{itemize}
+  \begin{block}{Ziel}
+    Einheitliche Namensstrukturen, 
+    \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Generelle Punkte}
+  \begin{itemize}
+  \item Multimodul vor Multiprojekt
+  \item parent pom mit wählbaren plugins
+  \item Querabhängigkeiten nie über snapshots
+  \end{itemize}
+  \begin{block}{Ziel}
+    Keine Works on my machine Projekte - Einheitliche Strukturen. Einheitliche Arbeitsumgebung (TODO besseres Wortwahl)
+    \end{block}
+\end{frame}
+\section{Codestyle}
+\begin{frame}
+  \frametitle{Formatter}
+  \begin{itemize}
+  \item Kein Eigenlösungen
+  \item google codestyle als Basis
+  \item ausschliesslich google formatter verwenden
+  \end{itemize}
+  \begin{block}{Prämisse}
+    Jeder kann machen was er will .... Der Main branch muss konform zum google code style sein
+    \end{block}
+\end{frame}
+6
+
+
+\begin{frame} 
+Denn ohne Titel fehlt ihnen was
+\end{frame}
+
+\end{document}

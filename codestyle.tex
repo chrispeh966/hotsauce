@@ -2,11 +2,65 @@
 \begin{frame}
   \frametitle{Formatter}
   \begin{itemize}
-  \item Kein Eigenlösungen
-  \item google codestyle als Basis
-  \item ausschliesslich google formatter verwenden
+  \item google code style als Basis
+  \item google formatter verwenden
+  \item erreichbar über git-hooks bei commit und push
+  \item erforderlich bei push in den main branch
   \end{itemize}
   \begin{block}{Prämisse}
-    Jeder kann machen was er will .... Der Main branch muss konform zum google code style sein
+    Eigene branches (feature oder bugfix) können eigene Formatierung haben. Der Main branch muss konform zum google code style sein.
     \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Aussagekräftige Funktions- und Methodennamen}
+  \begin{itemize}
+  \item it, has, does, can liefert einen \textbf{boolean} zurück
+  \begin{Beispiel}
+  \par public boolean \textbf{is}Active() 
+  \par protected boolean \textbf{has}License()
+    \end{Beispiel}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Funktions- und Methodennamen}
+  \begin{itemize}
+  \item Funktion/Methode, die einen Wert zurückliefert, enthält entsprechendes Verb \par(get, fetch, compute, generate, create, calculate)
+  \begin{Beispiel}
+  \par public int \textbf{get}TotalCostFromStart()
+  \par private int \textbf{calculate}EuclideanDistance(Node source, Node target)
+  \par public String \textbf{generate}InviteCode(Role role, String identifier)
+  \par private ValueGraph<Node, Integer> \textbf{create}Graph(List<List<Node> > nodes)
+  \par private int \textbf{compute}Score(User user)
+  \end{Beispiel}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Funktions- und Methodennamen}
+  \begin{itemize}
+  \item nichtsprechende Verben liefern nichts zurück (void!) $\rightarrow$ Exception
+  \begin{Beispiel}
+  \par public void \textbf{check}Credentials())
+  \end{Beispiel} 
+  
+  \item für checks bietet sich die Klasse Preconditions von guava an.
+  \begin{Beispiel}
+  \par checkArgument(value >= 0, ``input is negative: \%s", value);
+  \end{Beispiel}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Funktions- und Methodennamen}
+  \begin{itemize}
+    \item sprechende Funktionssignaturen sind besser als Dokumentation
+    \end{itemize}
+  \begin{Beispiel}
+  \par long \sout{getTimestamp()} $\rightarrow$ long getTimestamp\textbf{InMilliseconds}()
+  \end{Beispiel}
+
 \end{frame}

@@ -1,4 +1,27 @@
-\section{Repositories / Registries}
+\section{Repositories / Registries / Vault}
+\begin{frame}
+    \frametitle{Nomenklatur}
+    \begin{itemize}
+    \item artifactId == Name des Moduls
+    \item groupdid == de.Firmenname.bereichsname.projekt
+      \item package name == groupdid.artifactid:Versionsnummer
+    \end{itemize}
+    \begin{block}{Ziel}
+      Einheitliche Namensstrukturen, sprechende Namen und Nachvollziehbarkeit
+      \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Semantische Versionierung}
+    \begin{itemize}
+    \item Versionierung nach $MAJOR.MINOR.PATCH$
+    \item MAJOR wird erhoeht wenn API-inkompatible Aenderungen veroeffentlicht werden
+    \item MINOR wird erhoeht wenn neue Funktionalitaeten hinzugefuegt werden, jedoch die API kompatibel bleibt
+    \item PATCH wird erhoeht wenn ausschliesslich API-kompatible Bugfixes veroeffnetlicht werden
+    \end{itemize}
+    \begin{block}{Ziel}
+      Es muss jederzeit klar sein ob eine Abhaengigkeit kompatibel bleibt oder nicht.
+      \end{block}
+\end{frame}
 \begin{frame}
     \frametitle{Git Repository / gitlab}
     \begin{itemize}
@@ -11,14 +34,24 @@
         Das Gitlab sollte jederzeit in einem Zustand sein sodass es fuer die Allgemeinheit als open source zur Verfuegung gestellt werden koennte. (Rein qualitativ betrachtet) 
     \end{block}
 \end{frame}
+
 \begin{frame}
-    \frametitle{Nomenklatur}
+    \frametitle{Registries/Repositories}
     \begin{itemize}
-    \item artifactId == Name des Moduls
-    \item groupdid == de.Firmenname.bereichsname.projekt
-      \item package name == groupdid.artifactid:Versionsnummer
+    \item Artifakte im Nexus mit einheitlicher Struktur und nur releases
+    \item Container im Hafen
+    \item Git fuer Code
+    \item Keine grossen Daten in das Deployment $\rightarrow$ besser package Repository
     \end{itemize}
     \begin{block}{Ziel}
-      Einheitliche Namensstrukturen, sprechende Namen und Nachvollziehbarkeit
-      \end{block}
+        Es sollte immer erkennbar sein welcher Code welches Deployment und warum erzeugt
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vault}
+    \begin{itemize}
+    \item Credentials muessen ausnahmslos im Vault hinterlegt sein
+    \item Produktiv duerfen keine persoenlichen Tokens verwendet werden
+    \end{itemize}
 \end{frame}

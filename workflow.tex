@@ -3,12 +3,22 @@
     \frametitle{Kollaboration}
     \begin{itemize}
         \item Ein Projekt sollte immer mindestens eine Kopilotin / einen Kopiloten haben
-        \item Workflows duerfen kein Hindernis sein / Pragmastismus vor Dogmatismus
-        \item Entwickelnde sollte nicht gleichzeitig Maintainende des eigenen Codes sein
+        \item Workflows duerfen kein Hindernis sein / Pragmatismus vor Dogmatismus
+        \item Entwickelnde sollten nicht gleichzeitig Maintainende des eigenen Codes sein
     \end{itemize}
     \begin{block}{Ziel}
-        Steile These: Wenn dein Compadre dein Deployment / Code oder Projektstruktur nicht schnell versteht liegt es an Deinem Code und nicht an deinem Compadre
+        Steile These: Wenn deine Companera dein Deployment / Code oder Projektstruktur nicht schnell versteht liegt es an Dir und nicht an deinem Companero
     \end{block}
+\end{frame}
+\begin{frame}
+    \frametitle{Dokumentation}
+    \begin{itemize}
+        \item Form follows function
+        \item Technische Anforderungen und Vorgehensweisen fuer das Deployment / Entwicklungsumgebung immer in die README
+        \item Technische Dokumentationen immer im git und versionierbar (.md o.ae.)
+        \item Benutzerdokumentation immer im git und versionierbar, jedoch exportierbar fuer confluence
+    \end{itemize}
+    
 \end{frame}
 \begin{frame}
     \frametitle{Branches}
@@ -38,6 +48,20 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Testabdeckung}
+    \begin{itemize}
+    \item Grundsaetzlich sollte neuer Code mit Tests abgedeckt werden
+    \item Auftretende Bugs sollten mit Tests geprueft werden
+    \item Eine hohe Coverage garantiert keinen guten Code
+    \item Gute Tests ermoeglichen bessere Produkte
+    \end{itemize}
+    \begin{block}{Ziel}
+        Tests sollten die grundsaetzliche Funktionalitaeten pruefen und sicherstellen dass eine Software nach einem neuen Release nicht schlechter geworden ist.
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
     \frametitle{CI}
     \begin{itemize}
       \item Verwendung der Basis-CI
@@ -58,7 +82,7 @@
       \item Builds sollen reproduzierbar sein
     \end{itemize}
     \begin{block}{Ziel}
-        Einige Metriken der CI sollen auswertbar sein und Codeveraenderungen aussagekraeftig anzeigen koennen.
+        Einige Metriken der CI sollen auswertbar sein und Codeveraenderungen aussagekraeftig anzeigen koennen.        
     \end{block}
 \end{frame}
 

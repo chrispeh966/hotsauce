@@ -57,10 +57,65 @@
 \begin{frame}
 \frametitle{Funktions- und Methodennamen}
   \begin{itemize}
-    \item sprechende Funktionssignaturen sind besser als Dokumentation
+    \item sprechende Funktionssignaturen oder Variablennamen sind besser als Dokumentation
     \end{itemize}
   \begin{Beispiel}
-  \par long \sout{getTimestamp()} $\rightarrow$ long getTimestamp\textbf{InMilliseconds}()
+  \par private long \sout{getTimestamp()} $\rightarrow$ getTimestamp\textbf{InMilliseconds}()
+  \par long \sout{minTimeToRecognizeStop} $\rightarrow$ minTimeToRecognizeStop\textbf{InMs}
+  \end{Beispiel}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Constructor}
+  \begin{itemize}
+    \item anstatt komplexer Constructors besser Builder verwenden
+    \end{itemize}
+  \begin{Beispiel}
+  \par \sout{new ComplexObject(``Otto'', true, true, false, true, 182.5, 10.5);}
+  \par ComplexObject.newBuilder()\\
+    \hspace*{24.5mm}.setName(``Otto'')\\
+    \hspace*{24.5mm}.setVisible(true)\\
+    \hspace*{24.5mm}.setNewMember(true)\\
+    \hspace*{24.5mm}.setHasUnicorn(false)\\
+    \hspace*{24.5mm}.setCanFly(true)\\
+    \hspace*{24.5mm}.setHeight(182.5)\\
+    \hspace*{24.5mm}.setShoeSize(10.5)\\
+    \hspace*{24.5mm}.build();
+  \end{Beispiel}
+\end{frame}
+
+\begin{frame}
+\frametitle{Programmablauf und Lesbarkeit}
+  \begin{itemize}
+    \item fail early z.B. bei Builder
+    \item return early (wenn dadurch bessere Lesbarkeit auch mit else)
+    \item sparsam mit var
+    \item break und continue in Schleifen
+    \item lamda und streams nur wenn sinnvoll (insbes. ``for'' vs ``forEach'')
+    \item dependency injection - don't call me, we call you!
+    \item getters und setters sind Freunde - optional lombok
+    \end{itemize}
+  \begin{Beispiel}
+  \par 
+  \end{Beispiel}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Programmablauf}
+  \begin{itemize}
+    \item (möglichst) nie null als Rückgabewert!
+  \end{itemize}
+  \begin{block}{Besser}
+    $\rightarrow$ \textbf{Optional} bei 0 bis 1 Rückgabewert\\
+    $\rightarrow$ \textbf{leere Liste} bei 0 bis unendlich vielen Rückgabewerten\\
+  \end{block}
+  \begin{itemize}
+    \item Exceptions nur im richtigen Fehlerfall und mit eigener Nachricht! Nicht im regulärem Programmablauf!
+    \end{itemize}
+  \begin{Beispiel}
+  \par keine NotFoundException bei getUser(int userId)!
   \end{Beispiel}
 
 \end{frame}

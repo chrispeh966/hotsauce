@@ -2,13 +2,15 @@
 \begin{frame}
   \frametitle{Formatter}
   \begin{itemize}
-  \item google code style als Basis
+  \item \textbf{google code style} als Basis
   \item google formatter verwenden
   \item erreichbar über git-hooks bei commit und push
   \item erforderlich bei push in den main branch
   \end{itemize}
+  \vspace{4mm}
   \begin{block}{Prämisse}
-    Eigene branches (feature oder bugfix) können eigene Formatierung haben. Der Main branch muss konform zum google code style sein.
+    Eigene branches (feature oder bugfix) können eigene Formatierung haben. \\ 
+    Der Main branch muss konform zum google code style sein.
     \end{block}
 \end{frame}
 
@@ -17,8 +19,11 @@
   \begin{itemize}
   \item it, has, does, can liefert einen \textbf{boolean} zurück
   \begin{Beispiel}
-  \par public boolean \textbf{is}Active() 
+  \vspace{3mm}
+  \par public boolean \textbf{is}Active()
+  \vspace{3mm}
   \par protected boolean \textbf{has}License()
+  \vspace{3mm}
     \end{Beispiel}
   \end{itemize}
 \end{frame}
@@ -26,32 +31,39 @@
 \begin{frame}
   \frametitle{Funktions- und Methodennamen}
   \begin{itemize}
-  \item Funktion/Methode, die einen Wert zurückliefert, enthält entsprechendes Verb \par(get, fetch, compute, generate, create, calculate)
+  \item Funktion/Methode, die einen Wert zurückliefert, enthält entsprechendes Verb 
+  \vspace{2mm}
   \begin{Beispiel}
   \par public int \textbf{get}TotalCostFromStart()
+  \vspace{2mm}
+  \par public int \textbf{fetch}TODO!!!
+  \vspace{2mm}
   \par private int \textbf{calculate}EuclideanDistance(Node source, Node target)
+  \vspace{2mm}
   \par public String \textbf{generate}InviteCode(Role role, String identifier)
+  \vspace{2mm}
   \par private ValueGraph<Node, Integer> \textbf{create}Graph(List<List<Node> > nodes)
+  \vspace{2mm}
   \par private int \textbf{compute}Score(User user)
   \end{Beispiel}
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}
   \frametitle{Funktions- und Methodennamen}
   \begin{itemize}
-  \item nichtsprechende Verben liefern nichts zurück (void!) $\rightarrow$ Exception
+  \item nichtsprechende Verben liefern nichts zurück (void!) \\ $\rightarrow$ Exception
   \begin{Beispiel}
   \par public void \textbf{check}Credentials())
   \end{Beispiel} 
-  
-  \item für checks bietet sich die Klasse Preconditions von guava an.
+  \vspace{3mm}
+  \item für checks bieten sich die Google Guavas Preconditions an.
   \begin{Beispiel}
-  \par checkArgument(value >= 0, ``input is negative: \%s", value);
+  \par \textbf{Preconditions.checkArgument}(value >= 0, ``input is negative: \%s``, value);
+  \vspace{2mm}
+  \par \textbf{Preconditions.checkPositionIndex}(6, numbers.length - 1, ``Please check the bound of array! ``);
   \end{Beispiel}
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}
@@ -59,11 +71,14 @@
   \begin{itemize}
     \item sprechende Funktionssignaturen oder Variablennamen sind besser als Dokumentation
     \end{itemize}
+  \vspace{4mm}
   \begin{Beispiel}
+  \vspace{2mm}
   \par private long \sout{getTimestamp()} $\rightarrow$ getTimestamp\textbf{InMilliseconds}()
+  \vspace{2mm}
   \par long \sout{minTimeToRecognizeStop} $\rightarrow$ minTimeToRecognizeStop\textbf{InMs}
+  \vspace{2mm}
   \end{Beispiel}
-
 \end{frame}
 
 \begin{frame}
@@ -73,6 +88,7 @@
     \end{itemize}
   \begin{Beispiel}
   \par \sout{new ComplexObject(``Otto'', true, true, false, true, 182.5, 10.5);}
+  \vspace{2mm}
   \par ComplexObject.newBuilder()\\
     \hspace*{24.5mm}.setName(``Otto'')\\
     \hspace*{24.5mm}.setVisible(true)\\
@@ -97,9 +113,8 @@
     \item getters und setters sind Freunde - optional lombok
     \end{itemize}
   \begin{Beispiel}
-  \par 
+  \par TODO: ist das Kunst oder kann das weg?
   \end{Beispiel}
-
 \end{frame}
 
 \begin{frame}
@@ -108,14 +123,44 @@
     \item (möglichst) nie null als Rückgabewert!
   \end{itemize}
   \begin{block}{Besser}
-    $\rightarrow$ \textbf{Optional} bei 0 bis 1 Rückgabewert\\
-    $\rightarrow$ \textbf{leere Liste} bei 0 bis unendlich vielen Rückgabewerten\\
+    $\rightarrow$ \textbf{Optional} bei null bis einem Rückgabewert\\
+    \vspace{2mm}
+    $\rightarrow$ \textbf{leere Liste} bei null bis unendlich vielen Rückgabewerten\\
   \end{block}
+  \vspace{4mm}
   \begin{itemize}
     \item Exceptions nur im richtigen Fehlerfall und mit eigener Nachricht! Nicht im regulärem Programmablauf!
-    \end{itemize}
-  \begin{Beispiel}
-  \par keine NotFoundException bei getUser(int userId)!
-  \end{Beispiel}
+  \end{itemize}
+  \begin{block}{}
+    \par \centering \textbf{!} keine \textbf{NotFoundException} bei getUser(int userId) \textbf{!}
+  \end{block}
+\end{frame}
 
+\begin{frame}
+\frametitle{Programmablauf 2}
+\begin{itemize}
+  \item alles \textbf{threadsave} programmieren \\ 
+  $\rightarrow$ (Objekte halten keinen State)
+  \vspace{2mm}
+  \item wo möglich Objekte \textbf{immutable} - immutable is king
+  \vspace{2mm}
+  \item Ressourcen schließen! (\textbf{try with resources} oder \textbf{finally})
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Logging}
+\begin{itemize}
+  \item Logging Framework für Java: \textbf{SLF4J}
+  \vspace{2mm}
+  \item default Loglevel: \textbf{warn}
+  \vspace{2mm}
+  \item Metriken und Statistiken an Prometheus - nicht loggen
+  \vspace{2mm}
+  \item möglichst strukturiertes Logging
+  \vspace{2mm}
+\end{itemize}
+  \begin{block}
+    \par \centering \textbf{!} funktionierende Tests sind still und loggen nicht \textbf{!}
+  \end{block}
 \end{frame}
